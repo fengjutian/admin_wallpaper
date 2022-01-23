@@ -13,8 +13,7 @@ class LoginPage extends React.Component{
   }
 
   loginFun = e => {
-    this.props.history.push('/main')
-    console.log('e', e)
+    window.location.href='#/main'
   }
 
   render() {
@@ -28,7 +27,7 @@ class LoginPage extends React.Component{
               placeholder="请输入密码"
               iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
             />
-            <Button type="primary" size={size} onClick={() => this.loginFun()}>登录</Button>
+            <Button type="primary" size={size} onClick={this.loginFun.bind(this)}>登录</Button>
           </Space>
         </div>
       </>
